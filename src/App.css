@@ -1,0 +1,39 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+/*   Question Page*/
+.Test{
+  display: flex;
+  flex-direction: row;
+}
+.Question{
+  width: 50vw;
+  height: 75vh;
+  text-align:start;
+  align-self: flex-start;
+  padding-top: 10%;
+  padding: 5px;
+  font-size: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.userAnswer{
+  width: 50vw;
+  height: max-content;
+  text-align:start;
+  align-self: flex-start;
+  font-size: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction:column;
+}
+.userAnswer textarea{
+  height: 80vh;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
