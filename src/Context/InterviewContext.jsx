@@ -1,7 +1,7 @@
 import { getDocument } from "pdfjs-dist";
 import { createContext, useContext, useRef } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-const genAI = new GoogleGenerativeAI('AIzaSyCmLok3LuXg_71Pr2KghFt_twVR6lc5RFs');
+const genAI = new GoogleGenerativeAI('YOUR GEMINI API KEY HERE');
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 const InterviewContext = createContext();
 export const DataProvider = ({children})=>{
