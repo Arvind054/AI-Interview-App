@@ -28,6 +28,7 @@ const GetStarted = () => {
       style={{ fontSize: '1.5em', display: 'inline-block' }}
       repeat={Infinity}
     />
+     <br></br>
        <button style={{'background':'blue'}} onClick={handelStart}>Get Started</button>
        </div>
     </div>

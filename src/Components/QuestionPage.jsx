@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 import { InterviewData } from '../Context/InterviewContext'
 import { Button } from '@mui/material';
@@ -20,10 +20,19 @@ const QuestionPage = () => {
     const handleSubmit = ()=>{
        Evaluate(navigator);
     }
+    function handleAudio(){
+      const text = Questions[questionNumber-1];
+      const synth = window.speechSynthesis;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.voice = synth.getVoices()[2];
+      utterance.pitch = 1; 
+      utterance.rate = 1;
+      synth.speak(utterance);
+    }
   return (
     <>
     <div className="Test">
-    <div className= "Question" >Question: {Questions[questionNumber-1]} </div>
+    <div className= "Question" >Question: {Questions[questionNumber-1]}  <br /><button onClick={handleAudio}>🔊</button></div>
     <div className="userAnswer">
         <textarea name="" id="" placeholder='Write Your Answer Here !!' onChange={(e)=>setAnswer(e.target.value)}></textarea>
     {id == Questions.length && <Button onClick={handleSubmit}>Sumbit</Button>}
