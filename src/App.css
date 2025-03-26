@@ -4,14 +4,25 @@
   padding: 0rem;
   text-align: center;
 }
+
 /* Get Started Page..*/
 .GetStrtedPage{
   margin: 0px;
-  padding: 0;
+  padding: 0px;
+  width: 100vw;
+  height: max-content;
+  background-color: aliceblue;
+  color: black;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
 }
-.GetStrtedPage img{
-  z-index: -1;
-  opacity: 0.4;
+.GetStrtedPage h2{
+ color: black;
+ font-size: 3rem;
+ font-weight: 700;
+}
+.GetStrtedPage h3{
+  font-size: 1.5rem;
 }
 .controls{
   display: flex;
@@ -45,10 +56,9 @@
 }
 .UserInputs{
   width: 40%;
-  border: 2px solid  rgb(76, 76, 228);
   padding: 20px;
   border-radius: 10px;
-  height: 50%;
+  height: 60%;
 }
 .UserInputs h3{
   margin:10px;
@@ -57,39 +67,60 @@
 }
 .inputs{
   margin: 20px;
-  height: 40%;
+  height: 70%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-.inputs input{
-  font-size: 15px;
-  padding: 5px;
-  height: auto;
+.detailsSelection{
+  margin: 20px;
+  font-size: 25px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
   align-items: center;
-  text-align: center;
 }
-.inputs textarea{
-  padding-left: 5px;
-  width:45%;
-  height: 50%;
+.detailsSelection select{
   border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
 }
 /*   Question Page*/
 .Test{
   display: flex;
   flex-direction: row;
+  width: 95vw;
+  height: 95vh;
+  padding: 15px 20px;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
 }
 .Question{
-  width: 50vw;
-  height: 75vh;
+  width: 45vw;
+  height: 82vh;
   text-align:start;
   align-self: flex-start;
   padding-top: 10%;
   padding: 5px;
   font-size: 25px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(3, 22, 45);
+  color: rgb(255, 255, 255);
+  margin: 10px;
+  border-radius: 10px;
+  overflow:auto;
+  scrollbar-width: thin;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.Question button{
+  width: 50px;
+  height: 40px;
+  padding: 3px;
 }
 .userAnswer{
   width: 50vw;
@@ -100,10 +131,37 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction:column;
+  justify-content: center;
+  align-items: center;
 }
 .userAnswer textarea{
   height: 80vh;
   font-size: 15px;
   padding: 10px;
+  width: 90%;
   border-radius: 5px;
+  margin: 10px;
+}
+.userAnswer button{
+  margin: 10px;
+  display: block;
+  background-color: green;
+  color: white;
+}
+
+/*  resultPage */
+.resultPage{
+    width: 100vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.feedback{
+  width: 50%;
+  background-color: rgb(10, 10, 48);
+  height: max-content;
+  border-radius: 20px;
+  margin: 25px;
 }

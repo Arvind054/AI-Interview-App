@@ -32,7 +32,8 @@ const QuestionPage = () => {
   return (
     <>
     <div className="Test">
-    <div className= "Question" >Question: {Questions[questionNumber-1]}  <br /><button onClick={handleAudio}>🔊</button></div>
+    <div className= "Question" ><div >Question: {Questions[questionNumber-1]}</div> <button style={{backgroundColor: "White"}} onClick={handleAudio}>🔊</button> <button style={{  backgroundColor: "green"}}>💡</button>
+    </div>
     <div className="userAnswer">
         <textarea name="" id="" placeholder='Write Your Answer Here !!' onChange={(e)=>setAnswer(e.target.value)}></textarea>
     {id == Questions.length && <Button onClick={handleSubmit}>Sumbit</Button>}
