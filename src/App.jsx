@@ -4,6 +4,7 @@ import GetStarted from './Components/GetStarted';
 import Home from './Components/Home';
 import QuestionPage from './Components/QuestionPage';
 import Result from './Components/Result';
+import  Feedback  from './Components/Feedack';
 const router = createBrowserRouter([
   {
     path:'/',
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   },{
     path:"/interview/result",
     element:<Result></Result>
+  },
+  {
+    path:"/interview/Feedback",
+    element: <Feedback></Feedback>
   }
 ])
 function App() {

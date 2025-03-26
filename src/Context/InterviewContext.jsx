@@ -14,6 +14,7 @@ export const DataProvider = ({children})=>{
     const questionsRef = useRef([]) // Store the questions Refrence.
     const resultRef = useRef({})  // Question: Answer Key Value Pairs.
     const InterviewResult = useRef("");
+    const interviewFeedbackRef = useRef("");
 
 // Function to Initiate Interview By Getting Questiond From The Model For The Parsed user Resume
  async function CreateIntrview(resume, JobDesc, navigator){
@@ -38,18 +39,32 @@ export const DataProvider = ({children})=>{
 async function getHint(question){
 
 }
-// Function to Fetch The Result after Final Submit.
+// Function to Fetch The Score after Final Submit.
   async function Evaluate(navigate){
+    setLoading(true);
     const resultString = JSON.stringify(resultRef.current);
-    const prompt = `I have the Following Question Pair Answers of the Interview\n ${resultString}. \n
-    Evaluate The Result assume each question carries 20 points and total of 100 points. Return the score In one line and also return 
-    5- points of mistakes and suggstions to improve. After Each point use escape Characters.`;
+    const prompt = `The Following  are the Question Answers pairs of the Interview\n ${resultString}. \n
+    Evaluate The Result assume each question carries 20 points and total of 100 points.Evaluate and provide the Score Only.`;
     const result = await model.generateContent(prompt);
      InterviewResult.current = result.response.text();
      navigate("/interview/result");
+     setLoading(false);
   }
+
+// Function to Get the Feedback Of the Individual.
+async function GetFeedback(navigate){
+    setLoading(true);
+    const resultString = JSON.stringify(resultRef.current);
+    const prompt = `The Following are the Question Answer Pairs of an Interview\n ${resultString}. \n
+    Provide the Feedback based on the answers of the questions.Just Give the Mistakes and the key areas to improve 
+    in points.`
+    const result = await model.generateContent(prompt);
+    interviewFeedbackRef.current = result.response.text();
+    navigate("/interview/Feedback");
+    setLoading(false);
+}
     return (
-        <InterviewContext.Provider value={{CreateIntrview, questionsRef, resultRef,Evaluate,InterviewResult, Loading, setLoading}} >{children}</InterviewContext.Provider>
+        <InterviewContext.Provider value={{CreateIntrview, questionsRef, resultRef,Evaluate,InterviewResult, Loading, setLoading,GetFeedback,interviewFeedbackRef}} >{children}</InterviewContext.Provider>
     )
 }
 export const InterviewData = ()=>useContext(InterviewContext)
