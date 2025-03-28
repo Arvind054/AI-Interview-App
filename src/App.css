@@ -162,3 +162,12 @@
   width: 100vw;
   height: auto;
 }
+/* Feature card */
+.FeatureCard{
+  cursor: pointer;
+  transition: 1s ease-in-out;
+}
+.FeatureCard :hover{
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+}

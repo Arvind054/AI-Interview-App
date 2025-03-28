@@ -4,7 +4,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import toast from "react-hot-toast";
 
 // Creating the Instance of the GenAi model.
-const genAI = new GoogleGenerativeAI('AIzaSyCmLok3LuXg_71Pr2KghFt_twVR6lc5RFs');
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 const InterviewContext = createContext();
 
