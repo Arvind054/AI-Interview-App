@@ -27,12 +27,11 @@ const VisuallyHiddenInput = styled('input')({
 const Home = () => {
   const navigator = useNavigate();
   const [resume, setResume] = useState(null);
+  const [jobDesc, setJobDesc] = useState("");
   const [Questions, setQuestions] = useState("");
   const [exprience, setExprience] = useState("");
   const [type, setType] = useState("");
   const [difficulty, setDifficulty] = useState("");
-  const [jobDesc, setJobDesc] = useState("");
-
   const { CreateIntrview, Loading, setLoading} = InterviewData();
   function extractText(event) {
     const file = event.target.files[0];
@@ -71,7 +70,7 @@ const Home = () => {
     } 
     
     setLoading(true);
-     CreateIntrview(resume,jobDesc, navigator);
+     CreateIntrview(resume,jobDesc,Questions, exprience,type, difficulty, navigator);
   }
   return (
     <>

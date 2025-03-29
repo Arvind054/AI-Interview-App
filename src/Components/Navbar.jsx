@@ -86,11 +86,18 @@ function Navbar() {
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
-                </MenuItem>
-              ))}
+             <Button
+                onClick={()=>{navigator("/Home")}}
+                sx={{ my: 2, color: 'black', display: 'block', ":hover":{color:"blue"} }}>HOME</Button>
+              <Button
+                onClick={()=>{navigator("/Demo")}}
+                sx={{ my: 2, color: 'black', display: 'block', ":hover":{color:"blue"} }}>Demo</Button>
+              <Button
+                onClick={()=>{navigator("/Features")}}
+                sx={{ my: 2, color: 'black', display: 'block', ":hover":{color:"blue"} }}>Features</Button>
+              <Button
+                onClick={()=>{navigator("/About")}}
+                sx={{ my: 2, color: 'black', display: 'block', ":hover":{color:"blue"} }}>About</Button>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1}} />

@@ -18,9 +18,9 @@ export const DataProvider = ({ children }) => {
     const [hint, setHint] = useState("");
 
     // Function to Initiate Interview By Getting Questiond From The Model For The Parsed user Resume
-    async function CreateIntrview(resume, JobDesc, navigator) {
+    async function CreateIntrview(resume, JobDesc,Questions,exprience, type, difficulty, navigator) {
         const prompt = `This is the Parsed Text of my Resume \n ${resume} \n for the Job Description ${JobDesc}. \n
-    Give Me Five Interview Questions based On my Resume and The Job Description. Just Give The Questions Only.`
+    Give Me ${Questions} Interview Questions of ${difficulty} difficulty based ${type} use Resume and The Job Description for the Candidate with ${exprience}. Just Give The Questions Only.`
 
         // Fetch Model Result
         const result = await model.generateContent(prompt);
